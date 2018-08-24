@@ -1,0 +1,240 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	color: rgb(239, 227, 208);
+	font-family: 'Autour One', sans-serif;
+	font-size: calc(8px + .5vw);
+	line-height: 1.5;
+	background-image: url('../images/mudBackground.png');
+	background-repeat: space;
+	background-color: rgb(108, 74, 35);
+}
+
+.title {
+	font-family: 'Frijole', cursive;
+	text-align: center;
+	margin-left: 50%;
+	font-size: 60px;
+	text-shadow: -5px 0 rgb(58, 39, 17), 0 5px rgb(58, 39, 17), 5px 0 rgb(58, 39, 17), 0 -5px rgb(58, 39, 17);
+	margin: -12px;
+	line-height: 1.5;
+	background-color: rgb(108, 74, 35);
+}
+
+.level-buttons {
+	display: block;
+	text-align: center;
+	margin: -5px;
+}
+
+.level-selector {
+	margin: 10px;
+	border: 6px;
+	background-color: rgb(153, 0, 0);
+	box-shadow: 3.5px 5px rgb(91, 0, 0);
+	border-radius: 50%;
+	height: 50px; 
+	width: 50px;
+	color: black;
+	font-family: 'Autour One', cursive;
+	font-weight: bold;
+	font-size: 16px;
+	cursor: pointer;
+
+}
+
+.level4 {
+	height: 52px; 
+	width: 52px;
+	background-color: rgb(125, 0, 0);
+	box-shadow: 1.5px 1.5px rgb(91, 0, 0);
+	pointer-events: none;
+}
+
+.level-selector:hover {
+	height: 52px; 
+	width: 52px;
+	background-color: rgb(142, 0, 0);
+	box-shadow: 1.5px 1.5px rgb(91, 0, 0);
+}
+
+.flex-container {
+	display: flex;
+}
+
+.sidebar {
+	flex: 40%;
+	padding: 15px;
+
+}
+
+.css-property {
+	font-family: 'Inconsolata', sans-serif;
+	font-size: calc(12px + .5vw);
+	font-weight: 20px;
+	background-color: rgba(255, 255, 255, 0.4);
+	color: white;
+}
+
+.editorPane {
+	position: relative;
+	display: block;
+	margin-top: 25px;
+	padding-right: 15px; 
+	border-radius: 8px;
+	line-height: 1.5;
+	font-family: 'Inconsolata', sans-serif;
+	font-size: 17px;
+	min-width: 300px;
+}
+
+p {
+	background-color: rgb(108, 74, 35);
+}
+
+.lineNumbers {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	padding: 4px 4px 4px 8px;
+	background-color: rgb(142, 148, 150);
+	color: rgb(230, 234, 237);
+	text-align: right;
+}
+
+.cssCode {
+	position: relative;
+	height: 450px;
+	padding: 4px 10px 4px 50px;
+	background-color: rgb(230, 234, 237);
+	color: rgb(142, 148, 150);
+	white-space: pre-line;
+	min-height: 300px;
+}
+
+input {
+	width: calc(100% - 15px);
+	height: 25px;
+	border: none;
+	font-family: 'Inconsolata', sans-serif;
+	font-size: 17px;
+	color: rgb(51, 51, 51);
+}
+
+input::placeholder {
+	color: rgb(199, 212, 216); 
+}
+
+.nextButton {
+	position: absolute;
+	background-color: rgb(110, 163, 81);
+	color: white;
+	cursor: pointer;
+	border-radius: 6px;
+	padding: 5px 20px;
+	height: 40px;
+	width: 75px;
+	bottom: 5%;
+	right: 5%;
+}
+
+.nextButton:disabled {
+	opacity: 0.5;
+} 
+
+.grid-board {
+	width: 50vw;
+	height: 50vw;
+	position: relative;
+	border: 15px solid rgb(32, 112, 50);
+	border-radius: 20px;
+	margin-top: 15px;
+	overflow: hidden;
+	min-width: 400px;
+	min-height: 400px;
+}
+
+
+.surface, .river, .hippos, .food {
+	position: absolute;
+	display: grid;
+	grid-template-columns: 25% 25% 25% 25%;
+	grid-template-rows: 25% 25% 25% 25%;
+	width: 100%;
+	height: 100%;
+}
+
+.river {
+	background-color: rgb(50, 120, 163);
+}
+
+.grid-section, .hungryHippo, .water, .food, .sleepyHippo {
+	border: solid rgb(35, 88, 120);
+	border-bottom: none;
+	border-right: none;
+	border-radius: 5px;
+}
+
+.water {
+	background-image: url("../images/water.svg");
+	background-size: contain;
+}
+
+.bottom {
+	border-bottom: solid rgb(35, 88, 120);
+	border-radius: 5px;
+	z-index: 4;
+}
+
+.right {
+	border-right: solid rgb(35, 88, 120);
+	border-radius: 5px;
+	z-index: 4;
+
+}
+
+.hungryHippo {
+	background-image: url("../images/hungryHippos/hungryGreenHippo.svg");
+	background-size: cover;
+	grid-row-start: 2;
+	z-index: 2;
+}
+
+.green-1, .green-2, .green-3, .green-4, .green-5 {
+	background-image: url("../images/sleepyHippos/sleepyGreenHippo.svg");
+	background-size: contain;
+	z-index: 2;
+}
+
+.green-1 {
+	grid-column-start: 4;
+
+}
+
+.green-2 {
+	grid-column: 3;
+	grid-row: 2;
+}
+
+.green-3 {
+	grid-column: 2;
+	grid-row: 3;
+}
+
+.green-4 {
+	grid-column: 4;
+	grid-row: 3;
+}
+
+.green-5 {
+	grid-column: 3;
+	grid-row: 4;
+}
+
+.hippoFood {
+	background-image: url("../images/food.svg");
+	background-size: contain;
+	z-index: 3;
+}
